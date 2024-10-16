@@ -1,9 +1,9 @@
-import { FC } from 'react';
+import { Dispatch, FC, SetStateAction } from 'react';
 import cn from 'classnames';
 
 type Props = {
   errorMessage: string;
-  onChangeError: (error: string) => void;
+  onChangeError: Dispatch<SetStateAction<string>>;
 };
 
 export const Error: FC<Props> = ({ errorMessage, onChangeError }) => {

@@ -69,15 +69,17 @@ export const App: React.FC = () => {
           areAllCompleted={areAllCompleted(todos)}
         />
 
-        <TodoList todos={filteredTodos} />
-
         {Boolean(todos.length) && (
-          <Footer
-            onAddFilter={setFilter}
-            filter={filter}
-            activeTodos={countActiveTodos(todos)}
-            areAllActive={areAllActive(todos)}
-          />
+          <>
+            <TodoList todos={filteredTodos} />
+
+            <Footer
+              onAddFilter={setFilter}
+              filter={filter}
+              activeTodos={countActiveTodos(todos)}
+              areAllActive={areAllActive(todos)}
+            />
+          </>
         )}
       </div>
 

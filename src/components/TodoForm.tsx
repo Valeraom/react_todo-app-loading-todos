@@ -1,4 +1,11 @@
-import { ChangeEvent, FC, FormEvent, useState } from 'react';
+import {
+  ChangeEvent,
+  Dispatch,
+  FC,
+  FormEvent,
+  SetStateAction,
+  useState,
+} from 'react';
 import cn from 'classnames';
 
 import { Todo } from '../types/Todo';
@@ -6,7 +13,7 @@ import { USER_ID } from '../api/todos';
 
 type Props = {
   onSubmit: (newTodo: Omit<Todo, 'id'>) => Promise<void>;
-  onSetError: (error: string) => void;
+  onSetError: Dispatch<SetStateAction<string>>;
   areAllCompleted: boolean;
 };
 
